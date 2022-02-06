@@ -1,3 +1,4 @@
+import 'package:abet/screens/camera_screen.dart';
 import 'package:abet/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         SplashScreen.routeName: (context) => const SplashScreen(),
+        CameraScreen.routeName: (context) => const CameraScreen(),
       },
       initialRoute: SplashScreen.routeName,
     );
