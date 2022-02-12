@@ -165,8 +165,12 @@ class _CameraScreenState extends State<CameraScreen> {
 
   loadModel() async {
     await Tflite.loadModel(
-        model: "assets/models/model_unquant.tflite",
-        labels: "assets/models/labels.txt");
+        // model: "assets/models/model.tflite",
+        // model: "assets/models/model2.tflite",
+        // model: "assets/models/model3.tflite",
+        model: "assets/models/model4.tflite",
+        labels: "assets/models/labels.txt",
+        numThreads: 3);
   }
 
   runModel() async {
@@ -175,11 +179,13 @@ class _CameraScreenState extends State<CameraScreen> {
           bytesList: cameraImage!.planes.map((plane) {
             return plane.bytes;
           }).toList(),
+          // imageHeight: (cameraImage!.height * 0.5).toInt(),
+          // imageWidth: (cameraImage!.width * 0.5).toInt(),
           imageHeight: cameraImage!.height,
           imageWidth: cameraImage!.width,
           imageMean: 127.5,
           imageStd: 127.5,
-          rotation: 90,
+          // rotation: 90,
           numResults: 2,
           threshold: 0.1,
           asynch: true);
@@ -198,6 +204,12 @@ class _CameraScreenState extends State<CameraScreen> {
     super.initState();
     initCamera();
     loadModel();
+  }
+
+  @override
+  void dispose() async {
+    super.dispose();
+    await Tflite.close();
   }
 
   @override
