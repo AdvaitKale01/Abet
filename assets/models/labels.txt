@@ -1,2 +1,3 @@
-0 Mask On
-1 Mask Off
+0 Mask Off
+1 Mask On
+2 No Face

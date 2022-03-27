@@ -136,15 +136,15 @@ import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:tflite/tflite.dart';
 
-class CameraScreen extends StatefulWidget {
-  const CameraScreen({Key? key, required this.cameras}) : super(key: key);
+class CameraScreen2 extends StatefulWidget {
+  const CameraScreen2({Key? key, required this.cameras}) : super(key: key);
   final List<CameraDescription> cameras;
   static const routeName = '/camera-screen';
   @override
-  _CameraScreenState createState() => _CameraScreenState();
+  _CameraScreen2State createState() => _CameraScreen2State();
 }
 
-class _CameraScreenState extends State<CameraScreen> {
+class _CameraScreen2State extends State<CameraScreen2> {
   CameraImage? cameraImage;
   CameraController? cameraController;
   String result = "";
@@ -168,9 +168,8 @@ class _CameraScreenState extends State<CameraScreen> {
         // model: "assets/models/model.tflite",
         // model: "assets/models/model2.tflite",
         // model: "assets/models/model3.tflite",
-        // model: "assets/models/model4.tflite",
-        model: "assets/models/custom_model.tflite",
-        // labels: "assets/models/labels_old.txt",
+        //   model: "assets/models/model4.tflite",
+        model: "assets/models/face_detection_front.tflite",
         labels: "assets/models/labels.txt",
         numThreads: 3);
   }

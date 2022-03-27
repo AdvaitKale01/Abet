@@ -1,7 +1,8 @@
-import 'package:abet/screens/camera_screen.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'camera_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key, required this.cameras}) : super(key: key);
@@ -31,7 +32,10 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: Text('Abet'),
+        child: Text(
+          'Abet',
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
       ),
     );
   }
